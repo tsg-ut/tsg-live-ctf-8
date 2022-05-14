@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html class="has-background-dark">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Welcome to Firebase Hosting</title>
+		<script defer src="/__/firebase/9.8.1/firebase-app-compat.js"></script>
+		<script defer src="/__/firebase/9.8.1/firebase-auth-compat.js"></script>
+		<script defer src="/__/firebase/9.8.1/firebase-firestore-compat.js"></script>
+		<script defer src="/__/firebase/init.js?useEmulator=true"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+		<style>
+			html {
+				padding: 3rem;
+			}
+			#app {
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<h1 class="title is-1 has-text-danger">Challenge on fire</h1>
+			<p class="has-text-white">{{flag}}</p>
+		</div>
+		<script type="module">
+			import {createApp} from 'https://cdn.jsdelivr.net/npm/vue@3.2.33/dist/vue.esm-browser.js';
+			createApp({
+				data() {
+					return {
+						flag: 'Getting flag...',
+					};
+				},
+				async mounted() {
+					const auth = firebase.auth();
+					const {user} = await auth.signInAnonymously();
+					const token = await user.getIdToken();
+					const uid = user.uid;
+
+					try {
+						const db = firebase.firestore();
+						await db.collection('users').doc(uid).set({admin: false});
+
+						const flag = await db.collection('flags').doc('flag').get();
+						this.flag = flag.get('value');
+					} catch (e) {
+						this.flag = e.toString();
+					}
+				},
+			}).mount('#app');
+		</script>
+	</body>
+</html>

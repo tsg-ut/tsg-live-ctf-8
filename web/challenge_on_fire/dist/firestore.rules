@@ -1,0 +1,15 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{uid} {
+      // 自分のユーザー情報を書き込めるのは自分のみ
+      allow read, create: if request.auth.uid == uid && !request.resource.data.admin;
+      // 一度作ったユーザー情報を編集できるのはadminだけ
+      allow update: if request.resource.data.admin;
+    }
+    match /flags/flag {
+      // flagを読めるのはadminだけ
+      allow read: if get(/databases/$(database)/documents/users/$(request.auth.uid)).data.admin == true;
+    }
+  }
+}

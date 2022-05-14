@@ -1,0 +1,1 @@
+flag = "TSGLIVE{LCG5_4r3_w34k_1n_63n3r4l_bu7_15_3v3n_w34k3r_wh3n_r3m41nd3r5_4r3_u53d}"

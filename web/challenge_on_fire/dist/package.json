@@ -1,0 +1,12 @@
+{
+  "name": "problem_on_fire",
+  "version": "1.0.0",
+  "description": "たいへん！作問作業が炎上しちゃったよ！みんなで力を合わせてなんとかしよう！",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
