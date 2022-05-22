@@ -66,9 +66,9 @@ Welcome|misc|50|@naan4UGen|31
 |34	 |pr0xy	|0
 |34	 |hiikunZ	|0
 |34	 |hamayanhamayan	|0
-|34	 |ushigai	0
-|34	 |た	0
-|34	 |jiei_univ	0
-|34	 |kaia	0
-|34	 |GGG7	0
-|34	 |batecyo	0
+|34	 |ushigai	|0
+|34	 |た	|0
+|34	 |jiei_univ	|0
+|34	 |kaia	|0
+|34	 |GGG7	|0
+|34	 |batecyo	|0
