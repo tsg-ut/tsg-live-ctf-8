@@ -12,9 +12,9 @@
 [bpxor](pwn/bpxor)|pwn|200|@moratorium08|8
 [spmov](pwn/spmov)|pwn|300|@moratorium08|1
 Welcome|misc|50|@naan4UGen|31
-[guess](pwn/guess)|misc|250|@JP3BGY|8
+[guess](misc/guess)|misc|250|@JP3BGY|8
 [DNS ROPOB](rev)|rev|400|@iwashiira|8
-[Problem on fire](web/problem_on_fire)|web|200|@hakatashi|8
+[Problem on fire](web/challenge_on_fire)|web|200|@hakatashi|8
 
 ## Scoreboard
 
